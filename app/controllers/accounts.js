@@ -5,12 +5,24 @@ const Parking = require("../models/parking");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
 const ImageStore = require('../utils/image-store');
+const axios = require("axios");
 
 const Accounts = {
   index: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("main", { title: "Welcome to CamperPark" });
+
+    handler: async function (request, h) {
+      let instanceId = "Not Found";
+      try {
+        const response = await axios.get("http://169.254.169.254/latest/meta-data/instance-id/")
+        if (response.status == 200) {
+          instanceId = response.data;
+        }
+        return h.view("main", { title: "Welcome to CamperPark" , id: instanceId});
+      }catch(err){
+        return h.view("main", { title: "Welcome to CamperPark" , id: instanceId});
+      }
+
     },
   },
   showSignup: {
