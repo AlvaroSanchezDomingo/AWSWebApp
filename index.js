@@ -17,7 +17,7 @@ H.registerHelpers(Handlebars);
 
 
 const server = Hapi.server({
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 80,
 });
 
 
