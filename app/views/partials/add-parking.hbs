@@ -1,0 +1,82 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <form class="uk-form-stacked uk-text-left" action="/addparking" method="POST">
+    <div class="uk-grid uk-grid-stack">
+      <div class="uk-width-1-1@m">
+
+        <div class="uk-margin">
+            <div class="uk-inline uk-width-1-1">
+                <label class="uk-form-label" for="form-stacked-text">Parking Name</label>
+                <div class="uk-form-controls">
+                    <span class="uk-form-icon" uk-icon="icon: file-edit"></span>
+                    <input class="uk-input uk-form-large" id="form-stacked-text" type="text" name="name" placeholder="Insert name" />
+                </div>
+            </div>
+        </div>
+         <div class="uk-margin">
+             <div class="uk-inline uk-width-1-1">
+                 <label class="uk-form-label" for="form-stacked-text">Category</label>
+                 <span class="uk-form-icon" uk-icon="icon: bookmark"></span>
+                 <select class="uk-select uk-form-large" name="category">
+                      <option value='Nature'>Nature</option>
+                      <option value='Public'>Public</option>
+                      <option value='Private'>Private</option>
+                      <option value='Camping'>Camping</option>
+                 </select>
+             </div>
+         </div>
+
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <label class="uk-form-label" for="form-stacked-text">Pros</label>
+                  <div class="uk-form-controls">
+                      <span class="uk-form-icon" uk-icon="icon: arrow-up"></span>
+                      <input class="uk-input uk-form-large uk-form-success" id="form-stacked-text" type="text" name="pros" placeholder="Name pros here" />
+                  </div>
+              </div>
+          </div>
+
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <label class="uk-form-label" for="form-stacked-text">Cons</label>
+                  <div class="uk-form-controls">
+                      <span class="uk-form-icon" uk-icon="icon: arrow-down"></span>
+                      <input class="uk-input uk-form-large uk-form-danger" id="form-stacked-text" type="text" name="cons" placeholder="Name cons here" />
+                  </div>
+              </div>
+          </div>
+          <div class="uk-margin">
+              <div class="uk-inline uk-width-1-1">
+                  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                      <div>
+                          <label class="uk-form-label" for="form-stacked-text">Latitude</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input uk-form-large" id="form-stacked-text" type="Number" step="0.01" name="lat" placeholder="Latitude" />
+                          </div>
+                      </div>
+                      <div>
+                          <label class="uk-form-label" for="form-stacked-text">Longitude</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input uk-form-large" id="form-stacked-text" type="Number" step="0.01" name="long" placeholder="Longitude" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <div class="uk-margin">
+            <div class="uk-inline uk-width-1-1">
+                <label class="uk-form-label" for="form-stacked-text">Parking Description</label>
+                <div class="uk-form-controls">
+                    <span class="uk-form-icon" uk-icon="icon: file-text"></span>
+                    <textarea class="uk-textarea uk-form-large" id="form-stacked-text" type="text" rows="10"name="description" placeholder="Describe parking"></textarea>
+                </div>
+            </div>
+        </div>
+
+          <div class="uk-margin">
+              <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add</button>
+          </div>
+      </div>
+    </div>
+      {{> error }}
+  </form>
+</div>
